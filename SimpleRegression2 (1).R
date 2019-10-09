@@ -1,0 +1,18 @@
+data<-read.csv("C:\\Users\\user\\Desktop\\R\\iris.csv")
+summary(data)
+plot(data)
+cor(data$sepal_length,data$petal_length)
+fit<-lm(data$sepal_length ~ data$petal_length)
+fit
+par(mfrow=c(2,2))
+plot(fit)
+residuals(fit)
+summary(fit)
+
+
+data2<-subset(data,data$species!='Iris-setosa')
+plot(data2)
+cor(data2$sepal_length,data2$petal_length)
+fit<-lm(data2$sepal_length ~ data2$petal_length)
+summary(fit)
+plot(fit)
